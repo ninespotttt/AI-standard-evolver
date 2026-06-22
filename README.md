@@ -1,33 +1,132 @@
 # Standard Evolver
 
-Standard Evolver is a lightweight skill for building and evolving business analysis standards.
+让 AI 先理解业务，再用数据持续进化业务判断标准的通用 Skill。
 
-The core idea is simple:
+很多 AI 分析会直接从数据开始给结论，但如果没有业务标准，结论很容易漂：同一批数据今天这样解释，明天换一种说法。Standard Evolver 想解决的是这个问题：先帮用户建立一套业务分析标准，再用后续数据不断校准这套标准。
 
-1. Understand the user's business first.
-2. Build an initial analysis standard.
-3. Analyze user-provided data against that standard.
-4. Adjust the standard only when the data justifies it.
-5. Persist the updated rules, examples, and open questions for the next analysis.
+它适合用在产品机会分析、用户需求分析、素材分析、客户案例复盘、项目经验沉淀等场景。
 
-This is the same logic behind a business graph system: the graph is only one possible interface. The real method is letting business standards become clearer through repeated data analysis.
+## 它能做什么
 
-## Use It
+### 1. 业务理解
+
+先引导用户说明自己的业务：
+
+- 做什么产品或服务
+- 面向什么用户或客户
+- 希望 AI 帮忙判断什么
+- 什么结果算好，什么结果算差
+- 当前有哪些约束、目标和业务词汇
+
+### 2. 建立业务标准
+
+根据业务描述，整理出第一版分析标准：
+
+- 分析维度
+- 分类标签
+- 证据规则
+- 优先级或评分逻辑
+- 排除项
+- 输出格式
+
+这一步的作用是让 AI 不再凭感觉分析，而是先有一套可复用的判断框架。
+
+### 3. 按标准分析数据
+
+用户提供数据、案例、素材、聊天记录、项目笔记或其他资料后，AI 会按当前业务标准分析：
+
+- 这批数据说明了什么
+- 哪些证据支持当前判断
+- 哪些地方不确定
+- 哪些案例挑战了原来的标准
+- 哪些信息需要继续补充
+
+### 4. 根据数据进化标准
+
+如果新数据证明原来的标准太粗、太偏或漏了关键情况，就只调整必要的一小部分：
+
+- 新增一个维度
+- 修改一个标签定义
+- 调整一个证据强弱规则
+- 增加一个排除条件
+- 记录一个典型案例
+
+重点不是每次重写标准，而是让标准小步、可验证地变好。
+
+### 5. 沉淀成可复用记忆
+
+最后把有价值的内容沉淀下来：
+
+- 被确认的业务规则
+- 被修改的判断标准
+- 可复用的案例
+- 仍然未知的问题
+- 下一次分析应该注意什么
+
+这样下一轮分析就不是从零开始，而是从更新后的业务标准开始。
+
+## 核心流程
 
 ```text
-Use $standard-evolver to help me describe my business, build an initial analysis standard, then analyze my data against it.
+业务说明 -> 建立标准 -> 分析数据 -> 调整标准 -> 沉淀记忆
 ```
 
-## Modes
+如果你把它用在图谱系统里，图谱只是其中一种展示方式。真正重要的是：业务标准会随着数据不断变清楚。
 
-- Setup: create the first business standard from the user's business description.
-- Analyze: apply the current standard to new data and report findings.
-- Evolve: update the standard from data evidence and persist the memory.
+## 三种模式
 
-## Skill File
+- 初始化模式：根据业务描述建立第一版业务标准。
+- 分析模式：按当前标准分析新数据，并输出发现。
+- 进化模式：根据数据证据更新标准，并沉淀新的判断规则。
 
-The actual Codex skill instructions live in [`SKILL.md`](./SKILL.md).
+## 使用方式
 
-## Contact
+英文触发：
 
-Public contact: `jiangzi4560`.
+```text
+Use $standard-evolver to build a business standard, analyze my data, and evolve the standard.
+```
+
+中文触发：
+
+```text
+用 standard-evolver 帮我先梳理业务，建立分析标准，再根据数据更新这套标准。
+```
+
+你也可以直接这样开始：
+
+```text
+我的业务是：
+我希望 AI 帮我判断：
+什么结果算好：
+我现在有这些数据：
+请用 standard-evolver 帮我建立标准并分析。
+```
+
+## 输出内容
+
+一次完整输出通常包含：
+
+- Business Context：业务背景
+- Business Standard：当前业务标准
+- Data Analysis：基于标准的数据分析
+- Standard Update：标准更新记录
+- Memory Deposit：可复用记忆沉淀
+
+## 适合谁
+
+- 想让 AI 分析更稳定的人
+- 想把业务经验沉淀成标准的人
+- 想做 AI 业务分析工具的人
+- 想研究 agent memory / skill evolution 的人
+- 想让图谱、知识库或项目文档持续进化的人
+
+## 仓库内容
+
+- [`SKILL.md`](./SKILL.md)：Codex Skill 的核心指令。
+- [`agents/openai.yaml`](./agents/openai.yaml)：Skill 的展示信息和默认提示。
+- [`docs/standard-evolver-public-story.md`](./docs/standard-evolver-public-story.md)：对外分享稿，解释这套方法的由来和思路。
+
+## 交流与反馈
+
+如果你对这套方法有想法、改进建议或自己的实验案例，可以联系：`jiangzi4560`
