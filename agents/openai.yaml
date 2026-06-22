@@ -1,0 +1,4 @@
+interface:
+  display_name: "Standard Evolver"
+  short_description: "Build business standards, analyze data, and evolve the standard."
+  default_prompt: "Use $standard-evolver to help me describe my business, build an initial analysis standard, then analyze my data against it."
