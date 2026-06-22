@@ -12,14 +12,7 @@ Standard Evolver 不是一个复杂系统，也不绑定任何具体应用形态
 
 ## 一张图看懂
 
-```mermaid
-flowchart LR
-  A["1. 业务说明<br/>用户先讲清楚业务、目标、对象"] --> B["2. 建立标准<br/>定义维度、标签、证据、优先级"]
-  B --> C["3. 分析数据<br/>按标准分析素材、案例、反馈、记录"]
-  C --> D["4. 调整标准<br/>只修改被数据证明需要修改的部分"]
-  D --> E["5. 沉淀记忆<br/>保存规则、案例、边界、开放问题"]
-  E --> B
-```
+![Standard Evolver 核心流程](./assets/overview-flow.svg)
 
 真正重要的不是展示形式，而是业务标准会随着数据不断变清楚。
 
@@ -27,72 +20,17 @@ flowchart LR
 
 很多 AI 分析的问题不是模型不会分析，而是缺少稳定的业务标准。
 
-```mermaid
-flowchart TB
-  P["AI 分析不稳定"] --> P1["数据一来就分析<br/>但没有先定义什么算好、什么算差"]
-  P --> P2["同一批数据<br/>在不同对话里被解释成不同结论"]
-  P --> P3["业务经验在脑子里<br/>没有沉淀成可复用标准"]
-  P --> P4["结论看似合理<br/>但不知道依据是什么"]
-  P --> P5["每次复盘重新开始<br/>上一轮经验没有影响下一轮判断"]
-  P --> P6["知识库或项目文档有内容<br/>但缺少用数据校准标准的流程"]
-```
+![Standard Evolver 解决的问题](./assets/problem-map.svg)
 
 Standard Evolver 的目标是把隐性的业务判断显性化，让 AI 的分析不只是“给结论”，而是逐步形成一套可复用、可解释、可迭代的业务标准。
 
 ## 功能地图
 
-```mermaid
-flowchart TB
-  S["Standard Evolver<br/>业务标准进化协议"]
-
-  S --> A["业务理解"]
-  A --> A1["业务是什么"]
-  A --> A2["用户/客户是谁"]
-  A --> A3["AI 要辅助什么判断"]
-  A --> A4["什么结果算好或差"]
-
-  S --> B["标准建立"]
-  B --> B1["分析维度"]
-  B --> B2["分类标签"]
-  B --> B3["证据规则"]
-  B --> B4["优先级/评分逻辑"]
-  B --> B5["排除项"]
-
-  S --> C["数据分析"]
-  C --> C1["发现是什么"]
-  C --> C2["证据在哪里"]
-  C --> C3["哪里不确定"]
-  C --> C4["哪些数据挑战标准"]
-
-  S --> D["标准进化"]
-  D --> D1["新增维度"]
-  D --> D2["修改标签"]
-  D --> D3["调整证据强弱"]
-  D --> D4["记录典型案例"]
-
-  S --> E["记忆沉淀"]
-  E --> E1["业务规则"]
-  E --> E2["判断边界"]
-  E --> E3["误判案例"]
-  E --> E4["下一次注意事项"]
-```
+![Standard Evolver 功能地图](./assets/capability-map.svg)
 
 ## 标准怎么进化
 
-```mermaid
-flowchart TD
-  A["新数据进入"] --> B["按当前业务标准分析"]
-  B --> C{"数据是否挑战当前标准？"}
-  C -->|没有挑战| D["确认当前标准继续有效"]
-  C -->|有挑战| E["定位最小修改点"]
-  E --> F{"证据是否足够？"}
-  F -->|不足| G["标记为开放问题<br/>不急着改标准"]
-  F -->|足够| H["更新一条或少量规则"]
-  H --> I["沉淀案例和依据"]
-  I --> J["下一轮按新标准分析"]
-  G --> J
-  D --> J
-```
+![Standard Evolver 标准进化判断流程](./assets/evolution-gate.svg)
 
 核心原则：不要因为一批数据就重写整套标准。每次只改必要的一小部分，方便验证到底是哪条规则让判断变好了。
 
@@ -153,13 +91,7 @@ flowchart TD
 
 ## 输出结构
 
-```mermaid
-flowchart LR
-  A["Business Context<br/>业务背景"] --> B["Business Standard<br/>当前业务标准"]
-  B --> C["Data Analysis<br/>基于标准的数据分析"]
-  C --> D["Standard Update<br/>标准更新记录"]
-  D --> E["Memory Deposit<br/>可复用记忆沉淀"]
-```
+![Standard Evolver 输出结构](./assets/output-structure.svg)
 
 一次完整输出通常包含：
 
@@ -227,6 +159,7 @@ Standard Evolver 不适合用来：
 
 - [`SKILL.md`](./SKILL.md)：Codex Skill 的核心指令。
 - [`agents/openai.yaml`](./agents/openai.yaml)：Skill 的展示信息和默认提示。
+- [`assets/`](./assets)：README 中使用的静态说明图片。
 - [`docs/standard-evolver-public-story.md`](./docs/standard-evolver-public-story.md)：对外分享稿，解释这套方法的由来和思路。
 
 ## 交流与反馈
