@@ -1,6 +1,6 @@
 ---
 name: standard-evolver
-description: Build and evolve business analysis standards from user-provided business context and data. Use when guiding a user to describe their business, create an initial business standard, analyze incoming data against that standard, adjust the standard from evidence, and persist reusable memory or workflow rules without requiring visual graphs, dashboards, or a specific storage backend.
+description: Build and evolve business analysis standards from user-provided business context and data. Use when guiding a user to describe their business, create an initial business standard, analyze incoming data against that standard, adjust the standard from evidence, and persist reusable memory or workflow rules without requiring a specific storage backend, dashboard, or application interface.
 ---
 
 # Standard Evolver
@@ -9,7 +9,7 @@ description: Build and evolve business analysis standards from user-provided bus
 
 Use this skill to build a business standard first, then let user-provided data refine it over time. The output should be an initial or updated standard, a data-backed analysis, and a small memory update that improves the next analysis.
 
-A graph can be one implementation, but it is not the core requirement. The core method is: business context -> standard -> data analysis -> standard adjustment -> memory.
+The method does not depend on any specific application interface. The core method is: business context -> standard -> data analysis -> standard adjustment -> memory.
 
 ## Design Intent
 
